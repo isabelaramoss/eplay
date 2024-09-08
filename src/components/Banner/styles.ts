@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { TagContainer } from '../Tag/style'
+import { TagContainer } from '../Tag/styles'
 
 export const Image = styled.div`
   height: 560px;
