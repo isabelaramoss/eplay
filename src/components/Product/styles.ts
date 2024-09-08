@@ -3,6 +3,7 @@ import { colors } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 
 export const Card = styled.div`
+  position: relative;
   background-color: ${colors.gray};
   border-radius: 8px;
   padding: 8px;
@@ -11,6 +12,12 @@ export const Card = styled.div`
     margin-right: 8px;
   }
 `
+export const Infos = styled.div`
+  position: absolute;
+  top: 16px;
+  right: 16px;
+`
+
 export const CardTitle = styled.h3`
   display: block;
   font-size: 16px;
