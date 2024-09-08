@@ -10,8 +10,11 @@ export const Image = styled.div`
   font-weight: bold;
 
   .container {
+    display: flex;
+    justify-content: space-between;
     position: relative;
     padding-top: 344px;
+    align-items: flex-end;
   }
 
   ${TagContainer} {
