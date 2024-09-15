@@ -10,18 +10,27 @@ const Product = () => {
       <Hero />
       <Section title="Sobre o jogo" background="black">
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem repellat
-          quam est molestias, recusandae voluptatibus quasi molestiae tenetur
-          vitae dolorum. Voluptatibus fuga corrupti ea quasi libero porro at a
-          officia perferendis ipsa, quidem officiis esse nostrum eos?
-          Voluptatem, velit ratione minus consequatur omnis est fuga saepe porro
-          temporibus tenetur corporis perspiciatis tempora officia nemo sapiente
-          quae magni soluta necessitatibus numquam exercitationem ipsa quibusdam
-          dolorum deleniti? Natus quam voluptatem minima sint tempora vero
-          dolores quo consequuntur tenetur a error reprehenderit voluptate,
-          dolorem blanditiis, officiis accusantium eligendi sed ad? Id, eaque
-          expedita commodi, incidunt necessitatibus vero quidem perspiciatis
-          eligendi deserunt asperiores quia.
+          Hogwarts Legacy é um RPG de ação imersivo e de mundo aberto ambientado
+          no mundo introduzido pela primeira vez nos livros do Harry Potter.
+          Embarque em uma jornada por locais novos e familiares, personalize seu
+          personagem e crie poções, domine o lançamento de feitiços, aprimore
+          talentos e torne-se o bruxo que deseja ser. Experimente Hogwarts da
+          década de 1800. Seu personagem é um estudante com chave de um antigo
+          segredo que ameaça destruir o mundo bruxo. Faça aliados, lute contra
+          os bruxos das trevas e decida o destino do mundo bruxo. Seu legado é o
+          que você faz dele. Viva o Inesperado.
+        </p>
+      </Section>
+      <Section title="Mais detalhes" background="gray">
+        <p>
+          <b>Plataforma:</b> PS5 <br />
+          <b>Desenvolvedora:</b> Avalanche Software <br />
+          <b>Editora:</b> Portkey Games, subsidiária da Warner Bros. |
+          Interactive Entertaiment <br />
+          <b>Idiomas:</b> O jogo oferece suporte a diversos idiomas, incluindo
+          inglês, espanhol, francês, alemão, italiano, português, entre outros.
+          As opções de áudio e legenda podem ser ajustadas nas configurações do
+          jogo.
         </p>
       </Section>
     </>
