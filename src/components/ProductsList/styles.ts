@@ -14,7 +14,7 @@ export const Container = styled.section<Omit<Props, 'title' | 'games'>>`
   }
 `
 
-export const ProductTitle = styled.h2`
+export const Title = styled.h2`
   font-weight: bold;
   font-size: 18px;
 `
