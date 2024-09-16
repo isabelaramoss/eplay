@@ -4,8 +4,6 @@ import { GalleryItem } from '../../pages/Home'
 
 import Section from '../Section'
 
-import zelda from '../../assets/images/zelda.png'
-import hogwarts from '../../assets/images/fundo_hogwarts.png'
 import zoom from '../../assets/images/zoom.png'
 import play from '../../assets/images/play.png'
 import close from '../../assets/images/fechar.png'
