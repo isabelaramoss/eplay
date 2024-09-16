@@ -13,31 +13,32 @@ import close from '../../assets/images/fechar.png'
 import { Items, Item, Action, Modal, ModalContent } from './styles'
 
 //mock -> hardcoded - apenas para ocupar espaço
-const mock: GalleryItem[] = [
-  {
-    type: 'image',
-    url: zelda
-  },
-  {
-    type: 'image',
-    url: hogwarts
-  },
-  {
-    type: 'video',
-    url: 'https://www.youtube.com/embed/u9TY741PSh8?si=pb3pZ62sDN0203kw'
-  }
-]
+// const mock: GalleryItem[] = [
+//   {
+//     type: 'image',
+//     url: zelda
+//   },
+//   {
+//     type: 'image',
+//     url: hogwarts
+//   },
+//   {
+//     type: 'video',
+//     url: 'https://www.youtube.com/embed/u9TY741PSh8?si=pb3pZ62sDN0203kw'
+//   }
+// ]
 
 type Props = {
   defaultCover: string
   name: string
+  items: GalleryItem[]
 }
 
 interface ModalState extends GalleryItem {
   isVisible: boolean
 }
 
-const Gallery = ({ defaultCover, name }: Props) => {
+const Gallery = ({ defaultCover, name, items }: Props) => {
   const [modal, setModal] = useState<ModalState>({
     isVisible: false,
     type: 'image',
@@ -67,7 +68,7 @@ const Gallery = ({ defaultCover, name }: Props) => {
     <>
       <Section title="Galeria" background="black">
         <Items>
-          {mock.map((media, index) => (
+          {items.map((media, index) => (
             <Item
               key={media.url}
               onClick={() => {

@@ -38,7 +38,11 @@ const Product = () => {
           {game.details.languages.join(', ')}
         </p>
       </Section>
-      <Gallery defaultCover={zelda} name={'Teste'} />
+      <Gallery
+        defaultCover={game.media.cover}
+        name={game.name}
+        items={game.media.gallery}
+      />
     </>
   )
 }
