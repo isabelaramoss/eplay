@@ -34,6 +34,7 @@ export const Item = styled.li`
     ${Action} {
       opacity: 1;
       transition: opacity 0.7s ease;
+      cursor: pointer;
     }
   }
 `
@@ -43,11 +44,15 @@ export const Modal = styled.div`
   z-index: 1;
   top: 0;
   left: 0;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
+
+  &.opened {
+    display: flex;
+  }
 
   .overlay {
     position: absolute;
@@ -73,10 +78,20 @@ export const ModalContent = styled.div`
       font-size: 18px;
       font-weight: bold;
     }
+
+    img {
+      cursor: pointer;
+    }
   }
 
-  img {
+  img,
+  iframe {
     display: block;
     max-width: 100%;
+  }
+
+  iframe {
+    width: 100%;
+    height: 480px;
   }
 `
