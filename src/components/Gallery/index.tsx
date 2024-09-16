@@ -5,7 +5,7 @@ import spiderman from '../../assets/images/banner-homem-aranha.png'
 import zoom from '../../assets/images/zoom.png'
 import play from '../../assets/images/play.png'
 import close from '../../assets/images/fechar.png'
-import { Items, Item, Action, Modal } from './styles'
+import { Items, Item, Action, Modal, ModalContent } from './styles'
 
 type GalleryItem = {
   type: 'image' | 'video'
@@ -66,13 +66,14 @@ const Gallery = ({ defaultCover, name }: Props) => {
         </Items>
       </Section>
       <Modal>
-        <div className="container">
+        <ModalContent className="container">
           <header>
             <h4>{name}</h4>
             <img src={close} alt="Ícone de fechar" />
           </header>
           <img src={spiderman} alt="" />
-        </div>
+        </ModalContent>
+        <div className="overlay"></div>
       </Modal>
     </>
   )
