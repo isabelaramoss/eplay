@@ -8,7 +8,6 @@ export const HeroContainer = styled.div`
   display: block;
   height: 480px;
   width: 100%;
-  background-image: url(${banner});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
