@@ -13,6 +13,7 @@ export const ButtonContainer = styled.button<Props>`
     ${(props) => (props.variant === 'primary' ? colors.green : colors.white)};
   border-radius: 8px;
   padding: 8px 16px;
+  cursor: pointer;
 `
 
 export const ButtonLink = styled(Link)`
