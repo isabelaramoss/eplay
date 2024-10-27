@@ -96,6 +96,7 @@ export const CartItem = styled.li`
   }
 
   button {
+    cursor: pointer;
     background-image: url(${close});
     width: 16px;
     height: 16px;
