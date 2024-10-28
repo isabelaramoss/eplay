@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const FooterContainer = styled.footer`
   background-color: ${colors.gray};
@@ -19,6 +19,11 @@ export const SectionTitle = styled.h4`
 export const FooterLinks = styled.ul`
   display: flex;
   margin-top: 16px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
 `
 
 export const Link = styled.a`
