@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors, breakpoints } from '../../styles'
+import { colors } from '../../styles'
 
 type InputGroupProps = {
   maxWidth?: string
