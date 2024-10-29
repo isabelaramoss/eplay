@@ -23,4 +23,15 @@ export const CardContainer = styled.div`
     font-size: 14px;
     line-height: 22px;
   }
+
+  img {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+
+  button {
+    align-items: center;
+    display: inline-flex;
+  }
 `
