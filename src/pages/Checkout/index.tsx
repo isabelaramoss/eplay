@@ -6,10 +6,14 @@ import boleto from '../../assets/images/boleto.png'
 import cartao from '../../assets/images/cartão.png'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import { usePurchaseMutation } from '../../services/api'
 
 const Checkout = () => {
   //só temos duas opções, então se esse abaixo for falso, o outro automaticamente será true.
   const [payWithCard, setPayWithCar] = useState(false)
+  //[requisição/chamada, o que queremos recuperar]
+  const [purchase, { isLoading, isError, data }] = usePurchaseMutation()
+
   const form = useFormik({
     initialValues: {
       fullName: '',
@@ -71,8 +75,39 @@ const Checkout = () => {
       )
     }),
     onSubmit: (values) => {
-      //mudamos depois
-      console.log(values)
+      purchase({
+        billing: {
+          name: values.fullName,
+          email: values.email,
+          document: values.cpf
+        },
+        delivery: {
+          email: values.deliveryEmail
+        },
+        payment: {
+          card: {
+            active: payWithCard,
+            code: Number(values.cardCode),
+            name: values.cardOwner,
+            number: values.cardNumber,
+            owner: {
+              document: values.cpfCardOwner,
+              name: values.cardOwner
+            },
+            expires: {
+              month: 1,
+              year: 2024
+            }
+          },
+          installments: 1
+        },
+        products: [
+          {
+            id: 1,
+            price: 10
+          }
+        ]
+      })
     }
   })
 
