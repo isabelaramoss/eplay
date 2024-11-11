@@ -1,19 +1,22 @@
 import { useState } from 'react'
+import * as Yup from 'yup'
+import { useFormik } from 'formik'
+
 import Button from '../../components/Button'
 import Card from '../../components/Card'
-import { Row, InputGroup, TabButton } from './styles'
+
 import boleto from '../../assets/images/boleto.png'
 import cartao from '../../assets/images/cartão.png'
-import { useFormik } from 'formik'
-import * as Yup from 'yup'
+
 import { usePurchaseMutation } from '../../services/api'
+
+import { Row, InputGroup, TabButton } from './styles'
 
 const Checkout = () => {
   //só temos duas opções, então se esse abaixo for falso, o outro automaticamente será true.
   const [payWithCard, setPayWithCar] = useState(false)
   //[requisição/chamada, o que queremos recuperar]
-  const [purchase, { isLoading, isError, isSuccess, data }] =
-    usePurchaseMutation()
+  const [purchase, { isSuccess, data }] = usePurchaseMutation()
 
   const form = useFormik({
     initialValues: {

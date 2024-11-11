@@ -1,5 +1,12 @@
+import { useDispatch, useSelector } from 'react-redux'
+
 import Button from '../Button'
 import Tag from '../Tag'
+
+import { RootReducer } from '../../store'
+import { close, remove } from '../../store/reducers/cart'
+import { formataPreco } from '../ProductsList'
+
 import {
   Overlay,
   CartContainer,
@@ -8,10 +15,6 @@ import {
   Quantity,
   CartItem
 } from './styles'
-import { useDispatch, useSelector } from 'react-redux'
-import { RootReducer } from '../../store'
-import { close, remove } from '../../store/reducers/cart'
-import { formataPreco } from '../ProductsList'
 
 //Em qualquer tela, quando clicado o ícone de carrinhho, esse componente será aberto. Por isso, colocamos ele em App.
 const Cart = () => {
