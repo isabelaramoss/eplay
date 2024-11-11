@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { HashLink } from 'react-router-hash-link'
 
 import logo from '../../assets/images/logo.svg'
 import cart from '../../assets/images/carrinho.svg'
@@ -42,13 +43,28 @@ const Header = () => {
           <nav>
             <Links>
               <LinkItem>
-                <Link to="/categorias">Categorias</Link>
+                <Link
+                  title="Clique aqui para acessar a página de Categorias."
+                  to="/categorias"
+                >
+                  Categorias
+                </Link>
               </LinkItem>
               <LinkItem>
-                <a href="#">Novidades</a>
+                <HashLink
+                  title="Clique aqui para acessar a seção de em breve"
+                  to="/#coming-soon"
+                >
+                  Em breve
+                </HashLink>
               </LinkItem>
               <LinkItem>
-                <a href="#">Promoções</a>
+                <HashLink
+                  title="Clique aqui para acessar a seção de promoções"
+                  to="/#on-sale"
+                >
+                  Promoções
+                </HashLink>
               </LinkItem>
             </Links>
           </nav>
@@ -62,13 +78,28 @@ const Header = () => {
       <NavMobile className={isMenuOpen ? 'is-open' : ''}>
         <Links>
           <LinkItem>
-            <Link to="/categorias">Categorias</Link>
+            <Link
+              title="Clique aqui para acessar a página de Categorias."
+              to="/categorias"
+            >
+              Categorias
+            </Link>
           </LinkItem>
           <LinkItem>
-            <a href="#">Novidades</a>
+            <HashLink
+              title="Clique aqui para acessar a seção de em breve"
+              to="/#coming-soon"
+            >
+              Em breve
+            </HashLink>
           </LinkItem>
           <LinkItem>
-            <a href="#">Promoções</a>
+            <HashLink
+              title="Clique aqui para acessar a seção de promoções"
+              to="/#on-sale"
+            >
+              Promoções
+            </HashLink>
           </LinkItem>
         </Links>
       </NavMobile>
