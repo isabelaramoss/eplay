@@ -1,7 +1,7 @@
 import Tag from '../Tag'
 import Button from '../Button'
 
-import { formataPreco } from '../ProductsList'
+import { parseToBrl } from '../../utils'
 import { useGetFeaturedGameQuery } from '../../services/api'
 
 import { Image, Prices, Title } from './styles'
@@ -20,9 +20,9 @@ const Banner = () => {
         <div>
           <Title> {game?.name} </Title>
           <Prices>
-            De <span>{formataPreco(game?.prices.old)}</span>
+            De <span>{parseToBrl(game?.prices.old)}</span>
             <br />
-            por apenas {formataPreco(game?.prices.current)}
+            por apenas {parseToBrl(game?.prices.current)}
           </Prices>
         </div>
         <Button
