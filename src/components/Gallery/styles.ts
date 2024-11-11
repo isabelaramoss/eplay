@@ -51,7 +51,7 @@ export const Modal = styled.div`
   width: 100%;
   height: 100%;
 
-  &.opened {
+  &.is-visible {
     display: flex;
   }
 
@@ -78,6 +78,10 @@ export const ModalContent = styled.div`
     h4 {
       font-size: 18px;
       font-weight: bold;
+    }
+
+    > img {
+      cursor: pointer;
     }
   }
 

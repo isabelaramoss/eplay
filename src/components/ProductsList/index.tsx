@@ -1,9 +1,9 @@
 import Product from '../Product'
 
 import { Game } from '../../pages/Home'
-
-import { List, Container, Title } from './styles'
 import { parseToBrl } from '../../utils'
+
+import * as S from './styles'
 
 export type Props = {
   title: string
@@ -32,10 +32,10 @@ const ProductsList = ({ background, title, games, id }: Props) => {
   }
 
   return (
-    <Container background={background} id={id}>
+    <S.Container background={background} id={id}>
       <div className="container">
-        <Title>{title}</Title>
-        <List>
+        <S.Title>{title}</S.Title>
+        <S.List>
           {games.map((game) => (
             <li key={game.id}>
               <Product
@@ -50,9 +50,9 @@ const ProductsList = ({ background, title, games, id }: Props) => {
               />
             </li>
           ))}
-        </List>
+        </S.List>
       </div>
-    </Container>
+    </S.Container>
   )
 }
 
