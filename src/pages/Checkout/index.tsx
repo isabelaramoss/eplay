@@ -26,7 +26,7 @@ const Checkout = () => {
   //só temos duas opções, então se esse abaixo for falso, o outro automaticamente será true.
   const [payWithCard, setPayWithCar] = useState(false)
   //[requisição/chamada, o que queremos recuperar]
-  const [purchase, { isSuccess, data }] = usePurchaseMutation()
+  const [purchase, { isSuccess, data, isLoading }] = usePurchaseMutation()
   const { items } = useSelector((state: RootReducer) => state.cart)
 
   const [installments, setInstallments] = useState<Installment[]>([])
@@ -443,8 +443,9 @@ const Checkout = () => {
             type="submit"
             title="Clique aqui para finalizar a compra"
             onClick={form.handleSubmit}
+            disabled={isLoading}
           >
-            Finalizar compra
+            {isLoading ? 'Finalizando compra...' : 'Finalizar compra'}
           </Button>
         </form>
       )}
