@@ -40,6 +40,13 @@ export const Sidebar = styled.aside`
     max-width: 100%;
     width: 100%;
   }
+
+  .empy-text {
+    font-size: 14px;
+    line-height: 21px;
+    color: ${colors.white};
+    text-align: center;
+  }
 `
 
 export const Quantity = styled.p`
