@@ -34,6 +34,10 @@ type PurchasePayload = {
   }
 }
 
+type PurchaseResponse = {
+  orderId: string
+}
+
 const api = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://fake-api-tau.vercel.app/api/eplay'
@@ -68,7 +72,7 @@ const api = createApi({
     }),
     //o query usamos para recupar dados e o mutation para enviar.
     //.mutation<o-que-eu-quero, o-que-vou-enviar>
-    purchase: builder.mutation<any, PurchasePayload>({
+    purchase: builder.mutation<PurchaseResponse, PurchasePayload>({
       //query como função
       query: (body) => ({
         url: 'checkout',
