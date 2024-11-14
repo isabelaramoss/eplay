@@ -120,12 +120,10 @@ const Checkout = () => {
           },
           installments: values.installments
         },
-        products: [
-          {
-            id: 1,
-            price: 10
-          }
-        ]
+        products: items.map((item) => ({
+          id: item.id,
+          price: item.prices.current as number
+        }))
       })
     }
   })
@@ -146,7 +144,7 @@ const Checkout = () => {
         installmentsArray.push({
           quantity: i,
           amount: totalPrice / i,
-          formattedAmount: parseToBrl(totalPrice / 1)
+          formattedAmount: parseToBrl(totalPrice / i)
         })
       }
 
@@ -424,7 +422,10 @@ const Checkout = () => {
                           }
                         >
                           {installments.map((installment) => (
-                            <option key={installment.quantity}>
+                            <option
+                              value={installment.quantity}
+                              key={installment.quantity}
+                            >
                               {installment.quantity}x de{' '}
                               {installment.formattedAmount}
                             </option>
