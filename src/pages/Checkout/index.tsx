@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 import * as Yup from 'yup'
 import { useFormik } from 'formik'
@@ -15,6 +15,7 @@ import { usePurchaseMutation } from '../../services/api'
 
 import * as S from './styles'
 import { RootReducer } from '../../store'
+import { clear } from '../../store/reducers/cart'
 import { getTotalPrice, parseToBrl } from '../../utils'
 
 type Installment = {
@@ -32,6 +33,8 @@ const Checkout = () => {
 
   const [installments, setInstallments] = useState<Installment[]>([])
   const totalPrice = getTotalPrice(items)
+
+  const dispatch = useDispatch()
 
   const form = useFormik({
     initialValues: {
@@ -155,7 +158,13 @@ const Checkout = () => {
     }
   }, [totalPrice])
 
-  if (items.length === 0) {
+  useEffect(() => {
+    if (isSuccess) {
+      dispatch(clear())
+    }
+  }, [isSuccess, dispatch])
+
+  if (items.length === 0 && !isSuccess) {
     return <Navigate to="/" />
   }
 
